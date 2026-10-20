@@ -5328,3 +5328,310 @@ button, .btn, input, select, textarea,
         font-size: 12px;
     }
 }
+
+.floating-contact {
+    position: fixed;
+    bottom: 25px;
+    left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+}
+
+.floating-contact-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    color: var(--white-color);
+    font-size: 27px;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(17, 24, 39, 0.22);
+    transition: var(--transition);
+    animation: floatingContactIn 0.6s ease both;
+}
+
+.floating-whatsapp {
+    background: #25D366;
+    animation-delay: 0.1s;
+}
+
+.floating-phone {
+    background: var(--main-color);
+    animation-delay: 0.2s;
+}
+
+.floating-contact-btn:hover {
+    color: var(--white-color);
+    transform: translateY(-5px) scale(1.06);
+    box-shadow: 0 12px 30px rgba(17, 24, 39, 0.3);
+}
+
+.floating-whatsapp:hover {
+    background: #1DA851;
+}
+
+.floating-phone:hover {
+    background: #059669;
+}
+
+.floating-tooltip {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translate(8px, -50%);
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.floating-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--primary-color);
+}
+
+.floating-contact-btn:hover .floating-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
+}
+
+@keyframes floatingContactIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .floating-contact {
+        right: 15px;
+        bottom: 18px;
+        gap: 12px;
+    }
+
+    .floating-contact-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .floating-tooltip {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-contact-btn {
+        animation: none;
+        transition: none;
+    }
+}
+
+.hvac-service-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+    border-top: 1px solid #ffffff11;
+    padding-top: 20px;
+
+}
+
+.hvac-service-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 120px;
+    padding: 11px 14px;
+    border: 1px solid #10B981;
+    border-radius: 10px;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hvac-service-actions a:hover {
+    background: #059669;
+    border-color: #059669;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(16, 185, 129, 0.22);
+}
+
+.hvac-service-actions .hvac-service-call {
+    background: transparent;
+    color: #10B981;
+}
+
+.hvac-service-actions .hvac-service-call:hover {
+    background: #10B981;
+    color: #FFFFFF;
+}
+
+.hvac-service-actions i {
+    font-size: 17px;
+}
+
+@media (max-width: 400px) {
+    .hvac-service-actions {
+        gap: 8px;
+    }
+
+    .hvac-service-actions a {
+        min-width: 105px;
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+}
+
+.etqan-process-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.etqan-process-footer-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.etqan-process-footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.etqan-process-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 20px;
+    border: 2px solid #10B981;
+    border-radius: 12px;
+    background: #10B981 !important;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.etqan-process-contact-btn:hover {
+    background: #059669;
+    border-color: #059669;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+}
+
+.etqan-process-phone {
+    background: transparent;
+    color: #10B981;
+}
+
+.etqan-process-phone:hover {
+    background: #10B981;
+    color: #FFFFFF;
+}
+
+.etqan-process-contact-btn i {
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .etqan-process-footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .etqan-process-footer-content {
+        justify-content: center;
+    }
+
+    .etqan-process-footer-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .etqan-process-contact-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+.designed-by {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.designed-by span {
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+.designer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 6px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition: all 0.3s ease;
+}
+
+.designer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+    border-radius: 10px;
+
+}
+
+.designer-logo:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
